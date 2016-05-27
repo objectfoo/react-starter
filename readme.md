@@ -1,6 +1,6 @@
 # React starter
 
-Quicky react starter.
+Quickie react starter.
 
 Browserify, Mocha, Chai, auto reload with live-server.
 Loads React and ReactDOM as script refs to keep them out of the bundle.
