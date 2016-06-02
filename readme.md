@@ -13,3 +13,6 @@ npm run live-server # requires build or watch
 npm test
 npm test:watch
 ```
+# TODO
+
+* add redux

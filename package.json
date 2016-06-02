@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js ./test",
     "test:watch": "npm run test -- -w",
     "live-server": "live-server --wait=500 --port=3004 --ignore=node_modules,src --open=/dist/",
     "build": "browserify -d src/index.js -o dist/js/bundle.js -t [babelify --presets [ es2015 react ] ] -p [minifyify --map bundle.js.map --output dist/js/bundle.js.map]",
@@ -21,15 +21,16 @@
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "chai": "^3.5.0",
+    "enzyme": "^2.3.0",
     "eslint": "^2.10.2",
     "eslint-plugin-react": "^5.1.1",
+    "jsdom": "3.x.x",
     "live-server": "^1.0.0",
     "minifyify": "^7.3.3",
     "mocha": "^2.5.3",
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
-    "watchify": "^3.7.0",
-    "jsdom": "3.x.x"
+    "watchify": "^3.7.0"
   }
 }

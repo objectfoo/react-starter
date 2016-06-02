@@ -2,16 +2,16 @@
 
 import React from 'react';
 import {expect} from 'chai';
-import {renderIntoDocument} from 'react-addons-test-utils';
-import {scryRenderedDOMComponentsWithTag} from 'react-addons-test-utils';
+import {shallow} from 'enzyme';
+
 import App from '../src/components/App';
 
-describe('App', () => {
-	const component = renderIntoDocument(<App data={{ title: 'the title' }} />);
+describe('Title', () => {
+	const wrapper = shallow(<App data={{ title: 'the title' }} />);
 
-	it('should do something', () => {
-		const p = scryRenderedDOMComponentsWithTag(component, 'p');
+	it('should render title inside a paragraph', () => {
+		const paragraphText = wrapper.find('p').text();
 
-		expect(p[0].textContent).to.equal('the title');
+		expect(paragraphText).to.eql('the title');
 	});
 });
