@@ -1,15 +1,15 @@
 {
   "name": "react-starter",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js ./test",
-    "test:watch": "npm run test -- -w",
-    "live-server": "live-server --wait=500 --port=3004 --ignore=node_modules,src --open=/dist/",
-    "build": "browserify -d src/index.js -o dist/js/bundle.js -t [babelify --presets [ es2015 react ] ] -p [minifyify --map bundle.js.map --output dist/js/bundle.js.map]",
-    "watch": "watchify -d src/index.js -o dist/js/bundle.js -t [babelify --presets [ es2015 react ] ] -v"
+    "build": "gulp build",
+    "watch": "gulp",
+    "live-server": "live-server --port=3004 --watch=./dist --open=/dist/",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
+    "test:watch": "npm run test -- --watch"
   },
   "keywords": [],
   "author": "",
@@ -22,8 +22,13 @@
     "browserify": "^13.0.1",
     "chai": "^3.5.0",
     "enzyme": "^2.3.0",
-    "eslint": "^2.10.2",
+    "eslint": "^3.1.0",
     "eslint-plugin-react": "^5.1.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.4",
+    "gulp-util": "^3.0.7",
     "jsdom": "3.x.x",
     "live-server": "^1.0.0",
     "minifyify": "^7.3.3",
@@ -31,6 +36,8 @@
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   }
 }
