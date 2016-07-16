@@ -13,7 +13,3 @@ Loads React and ReactDOM as browser scripts to keep them out of the bundle.
   "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
   "test:watch": "npm run test -- --watch"
 },
-```
-# TODO
-
-* add redux
