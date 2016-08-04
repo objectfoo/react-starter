@@ -11,6 +11,6 @@ if (host.length > 0) {
 
 	ReactDOM.render(
 		<App data={data} />,
-		document.getElementsByTagName('main')[0]
+		host
 	);
 }
