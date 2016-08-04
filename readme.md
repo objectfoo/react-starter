@@ -2,7 +2,9 @@
 
 Quickie react starter.
 
-works with node v0.10.28
+Cribbed a nice component that demos lifecycle from http://www.tutorialspoint.com/reactjs/reactjs_component_life_cycle.htm
+
+works with node v0.10.28 (for now)
 
 gulp, browserify, eslint, Mocha, chai, auto reload with live-server.
 Loads React and ReactDOM as browser scripts to keep them out of the bundle.

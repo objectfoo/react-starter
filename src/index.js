@@ -3,14 +3,14 @@
 import App from './components/App';
 
 const ReactDOM = global.ReactDOM;
-const data = {title: 'the title'};
+const initialData = {number: 0};
 let host = document.getElementsByTagName('main');
 
 if (host.length > 0) {
 	host = host[0];
 
 	ReactDOM.render(
-		<App data={data} />,
+		<App initialData={initialData} />,
 		host
 	);
 }

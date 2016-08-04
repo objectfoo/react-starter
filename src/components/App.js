@@ -1,15 +1,35 @@
 'use strict';
 
-const React = global.React;
+var React = global.React;
+var Count = require('./Count');
 
-class App extends React.Component {
-	render() {
-		const {title} = this.props.data;
+var App = React.createClass({
+	getInitialState: function() {
+		return {
+			data: this.props.initialData.number
+		};
+	},
 
-		return (
-			<p>{title}</p>
+	render: function() {
+		var s = {
+			maxWidth: '200px',
+			textAlign: 'center',
+			margin: '4em auto 2em'
+		};
+
+		return(
+			<div style={s}>
+				<Count number={this.state.data} />
+				<button onClick={this.incrementCount}>increment count</button>
+			</div>
 		);
-	}
-}
+	},
 
-export {App as default};
+	incrementCount: function() {
+		this.setState({
+			data: this.state.data + 1
+		});
+	}
+});
+
+module.exports = App;
