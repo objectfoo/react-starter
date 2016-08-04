@@ -8,7 +8,8 @@ var Count = React.createClass({
 	},
 
 	componentDidMount: function() {
-		global.console.log('DID MOUNT (client only) ------------');
+		global.console.log('DID MOUNT (client only) <-- waiting for state change');
+		global.console.log(' ');
 	},
 
 	componentWillReceiveProps: function() {
@@ -25,7 +26,8 @@ var Count = React.createClass({
 	},
 
 	componentDidUpdate: function() {
-		global.console.log('DID UPDATE (server, client) ------------');
+		global.console.log('DID UPDATE (server, client) <-- waiting for state change');
+		global.console.log(' ');
 	},
 
 	componentWillUnmount: function() {
