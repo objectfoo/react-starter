@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp build",
+    "build": "cross-env NODE_ENV=production gulp build",
     "watch": "gulp",
     "live-server": "live-server --port=3004 --watch=./dist --open=/dist/",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
@@ -21,6 +21,7 @@
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "chai": "^3.5.0",
+    "cross-env": "^2.0.0",
     "enzyme": "^2.3.0",
     "eslint": "^2.13.1",
     "eslint-plugin-react": "^5.1.1",
