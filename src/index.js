@@ -1,16 +1,9 @@
 'use strict';
 
-import App from './components/App';
-
 const ReactDOM = global.ReactDOM;
-const initialData = {number: 0};
-let host = document.getElementsByTagName('main');
+import App from './App/App';
 
-if (host.length > 0) {
-	host = host[0];
-
-	ReactDOM.render(
-		<App initialData={initialData} />,
-		host
-	);
-}
+ReactDOM.render(
+	<App {...{title: 'Counter', initialValue: 0}} />,
+	document.getElementsByTagName('main')[0]
+);
