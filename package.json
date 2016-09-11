@@ -14,6 +14,9 @@
   "ava": {
     "tap": true,
     "failFast": true,
+    "files": [
+      "./src/**/__tests__/**/*.test.js"
+    ],
     "require": [
       "babel-register",
       "./jsdom_setup.js"
@@ -57,6 +60,8 @@
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"

@@ -1,9 +1,17 @@
 'use strict';
 
-var React = global.React;
+import React from 'react';
+
 var debug = require('debug')('Counter');
 
 class Count extends React.Component {
+
+	constructor(props) {
+		super(props);
+		debug('constructor (client, server)');
+		this.onClick = this.onClick.bind(this);
+	}
+
 	componentWillMount() {
 		debug('WILL MOUNT (server, client)');
 	}
@@ -33,14 +41,23 @@ class Count extends React.Component {
 		debug('WILL MOUNT (server, client)');
 	}
 
+	onClick() {
+		this.props.increment();
+	}
+
 	render() {
 		debug('RENDER (server, client)');
 		return(
-			<p className='text-center'>
-				<strong>{this.props.number}</strong>
-			</p>
+			<div className='counter'>
+				<p className='text-center'>
+					<strong>{this.props.number}</strong>
+				</p>
+				<button onClick={this.onClick} type='button'>
+					increment
+				</button>
+			</div>
 		);
 	}
 }
 
-module.exports = Count;
+export {Count as default};

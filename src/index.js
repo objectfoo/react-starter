@@ -1,9 +1,20 @@
 'use strict';
 
-const ReactDOM = global.ReactDOM;
-import App from './App/App';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import Counter from './containers/Counter';
+import reducer from './reducer';
+
+const store = createStore(reducer);
 
 ReactDOM.render(
-	<App {...{title: 'Counter', initialValue: 0}} />,
+	<Provider store={store}>
+		<div>
+			<h1>Counter</h1>
+			<Counter />
+		</div>
+	</Provider>,
 	document.getElementsByTagName('main')[0]
 );
