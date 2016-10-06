@@ -2,8 +2,6 @@
 
 Quickie react starter.
 
-Cribbed a nice component that demos lifecycle from http://www.tutorialspoint.com/reactjs/reactjs_component_life_cycle.htm
-
 gulp, browserify, eslint, Mocha, chai, auto reload with live-server.
 Loads React and ReactDOM as browser scripts to keep them out of the bundle.
 
