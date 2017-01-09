@@ -1,6 +1,5 @@
 {
   "env": {
-    "mocha": true,
     "browser": true,
     "es6": true,
     "node": true
@@ -10,8 +9,7 @@
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "jsx": true
-    },
-    "sourceType": "module"
+    }
   },
   "plugins": [
     "react"
@@ -37,7 +35,9 @@
   },
   "settings": {
     "react": {
-      "pragma": "React"
+      "pragma": "React",
+      "createClass": "createClass",
+      "version": "15.0"
     }
   }
 }
