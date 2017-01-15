@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "npm run prebuild && webpack-dev-server",
     "clean": "rimraf ./dist && mkdir dist && mkdir dist/css",
     "copy:css": "cp ./src/css/* ./dist/css/",
     "copy:html": "cp ./src/index.html ./dist/index.html",
