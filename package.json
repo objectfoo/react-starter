@@ -6,11 +6,11 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "clean": "cross-env rimraf ./dist && mkdir dist && mkdir dist/css",
+    "clean": "rimraf ./dist && mkdir dist && mkdir dist/css",
     "copy:css": "cp ./src/css/* ./dist/css/",
     "copy:html": "cp ./src/index.html ./dist/index.html",
     "webpack:build": "cross-env NODE_ENV=production webpack",
-    "prebuild": "cross-env npm run clean && npm run copy:html && npm run copy:css",
+    "prebuild": "npm run clean && npm run copy:html && npm run copy:css",
     "build": "npm run webpack:build"
   },
   "keywords": [],
