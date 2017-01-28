@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.1.0",
   "description": "",
+  "engines": {
+    "node": ">=4.7"
+  },
   "main": "index.js",
   "scripts": {
     "start": "npm run prebuild && concurrently \"npm run watch:css\" \"npm run watch:html\" \"npm run dev-server\"",
