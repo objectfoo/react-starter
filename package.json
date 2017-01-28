@@ -3,64 +3,44 @@
   "private": true,
   "version": "1.1.0",
   "description": "",
+  "engines": {
+    "node": ">=4.7"
+  },
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production gulp build",
-    "watch": "gulp",
-    "live-server": "live-server --port=3004 --watch=./dist --open=/dist/",
-    "test": "ava --verbose --harmony",
-    "test:watch": "npm run test -- --watch"
-  },
-  "ava": {
-    "tap": true,
-    "failFast": true,
-    "require": [
-      "babel-register",
-      "./jsdom_setup.js"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ],
-    "plugins": [
-      "transform-object-rest-spread"
-    ]
+    "start": "npm run prebuild && concurrently \"npm run watch:css\" \"npm run watch:html\" \"npm run dev-server\"",
+    "dev-server": "webpack-dev-server",
+    "clean": "rimraf ./dist && mkdir dist && mkdir dist/css",
+    "watch:css": "npm run copy:css -- --watch --verbose",
+    "copy:css": "cpx ./src/css/* ./dist/css/",
+    "watch:html": "npm run copy:html -- --watch --verbose",
+    "copy:html": "cpx ./src/index.html ./dist/",
+    "webpack:build": "cross-env NODE_ENV=production webpack",
+    "prebuild": "npm run clean && npm run copy:html && npm run copy:css",
+    "build": "npm run webpack:build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^0.16.0",
-    "babel-core": "^6.10.0",
-    "babel-plugin-transform-object-rest-spread": "^6.8.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
-    "babelify": "^7.3.0",
-    "browserify": "^13.1.1",
-    "chai": "^3.5.0",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "concurrently": "~3.1.0",
+    "cpx": "~1.5.0",
     "cross-env": "^3.1.3",
-    "debug": "^2.2.0",
-    "enzyme": "^2.5.1",
-    "eslint": "^3.5.0",
-    "eslint-plugin-ava": "^3.0.0",
-    "eslint-plugin-react": "^6.2.0",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-sourcemaps": "^2.2.0",
-    "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.7",
-    "jsdom": "^9.8.3",
-    "jsdom-global": "2.1.0",
-    "live-server": "^1.1.0",
-    "minifyify": "^7.3.3",
-    "react": "^15.3.1",
-    "react-addons-test-utils": "^15.3.1",
-    "react-dom": "^15.3.1",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "css-loader": "^0.26.1",
+    "eslint": "^3.14.1",
+    "eslint-plugin-react": "^6.9.0",
+    "postcss-loader": "^1.2.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-hot-loader": "3.0.0-beta.6",
+    "rimraf": "~2.5.4",
+    "style-loader": "^0.13.1",
+    "webpack": "2.2.0",
+    "webpack-dev-server": "2.2.0"
   },
   "dependencies": {}
 }

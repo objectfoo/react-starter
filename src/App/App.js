@@ -31,7 +31,7 @@ class App extends React.Component {
 				<button onClick={this.increment}>increment</button>
 			</div>
 		);
-	}	
+	}
 }
 
 App.propTypes = {
