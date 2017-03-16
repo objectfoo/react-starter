@@ -12,6 +12,10 @@ module.exports = {
 			'webpack-dev-server/client?http://localhost:8080',
 			'webpack/hot/only-dev-server',
 			'./index.js'
+		],
+		vendor: [
+			'react',
+			'react-dom'
 		]
 	},
 	output: {
