@@ -25,8 +25,8 @@ module.exports = {
 	devtool: 'inline-source-map',
 	devServer: {
 		hot: true,
-		compress: true,
-		contentBase: path.resolve(__dirname, './dist')
+		compress: false,
+		contentBase: path.resolve(__dirname, 'dist')
 	},
 	module: {
 		rules: [

@@ -14,7 +14,7 @@
     "watch:css": "npm run copy:css -- --watch --verbose",
     "copy:css": "cpx ./src/css/* ./dist/css/",
     "watch:html": "npm run copy:html -- --watch --verbose",
-    "copy:html": "cpx ./src/index.html ./dist/",
+    "copy:html": "cpx ./src/**/*.html ./dist/",
     "webpack:build": "cross-env NODE_ENV=production webpack",
     "prebuild": "npm run clean && npm run copy:html && npm run copy:css",
     "build": "npm run webpack:build"
