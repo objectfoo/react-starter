@@ -17,21 +17,22 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].bundle.js',
-		path: path.resolve(__dirname, './dist')
+		path: path.resolve(__dirname, './dist'),
+		publicPath: '/'
 	},
 	devtool: 'inline-source-map',
 	devServer: {
 		hot: true,
 		compress: false,
-		contentBase: path.resolve(__dirname, 'dist')
+		contentBase: path.resolve(__dirname, 'dist'),
+		publicPath: '/'
 	},
 	module: {
 		rules: [
 			{
 				test: /\.js$/,
-				use: [
-					{ loader: 'babel-loader' }
-				]
+				use: [ 'babel-loader' ],
+				exclude: /node_modules/
 			},
 			{
 				test: /\.css$/,

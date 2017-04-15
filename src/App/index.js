@@ -1,4 +1,1 @@
-const App = require('./App');
-
-module.exports = App;
-
+export { default as default } from './App';

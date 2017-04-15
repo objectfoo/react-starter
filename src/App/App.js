@@ -1,9 +1,9 @@
 'use strict';
 
-var React = global.React;
-var Counter = require('../Counter/Counter');
+const React = global.React;
+import Counter from '../Counter/Counter';
 
-class App extends React.Component {
+export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		const {initialValue=0} = this.props;
@@ -38,5 +38,3 @@ App.propTypes = {
 	title: React.PropTypes.string.isRequired,
 	initialValue: React.PropTypes.number
 };
-
-module.exports = App;

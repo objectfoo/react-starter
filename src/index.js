@@ -1,7 +1,7 @@
 'use strict';
 
 const ReactDOM = global.ReactDOM;
-const App = require('./App/index.js');
+import App from './App/index';
 
 ReactDOM.render(
 	<App {...{title: 'Counter', initialValue: 0}} />,
