@@ -1,6 +1,7 @@
 'use strict';
 
-const React = global.React;
+import React from 'react';
+import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter';
 
 export default class App extends React.Component {
@@ -35,6 +36,6 @@ export default class App extends React.Component {
 }
 
 App.propTypes = {
-	title: React.PropTypes.string.isRequired,
-	initialValue: React.PropTypes.number
+	title: PropTypes.string.isRequired,
+	initialValue: PropTypes.number
 };

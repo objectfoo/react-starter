@@ -1,7 +1,8 @@
 'use strict';
 
-const React = global.React;
-const debug = require('debug')('Counter');
+import React from 'react';
+import Debug from 'debug';
+const debug = Debug('Counter');
 
 export default class Count extends React.Component {
 	componentWillMount() {
