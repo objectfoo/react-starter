@@ -9,13 +9,13 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run prebuild && concurrently \"npm run watch:css\" \"npm run watch:html\" \"npm run dev-server\"",
-    "dev-server": "webpack-dev-server",
+    "dev-server": "webpack-dev-server --env=dev",
     "clean": "rimraf ./dist && mkdir dist && mkdir dist/css",
     "watch:css": "npm run copy:css -- --watch --verbose",
     "copy:css": "cpx ./src/css/* ./dist/css/",
     "watch:html": "npm run copy:html -- --watch --verbose",
     "copy:html": "cpx ./src/**/*.html ./dist/",
-    "webpack:build": "cross-env NODE_ENV=production webpack",
+    "webpack:build": "cross-env NODE_ENV=production webpack --env=prod --progress --profile --colors",
     "prebuild": "npm run clean && npm run copy:html && npm run copy:css",
     "build": "npm run webpack:build"
   },
@@ -42,5 +42,7 @@
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "webpack-merge": "^4.1.0"
+  }
 }
