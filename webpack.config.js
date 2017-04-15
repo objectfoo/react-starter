@@ -3,9 +3,6 @@ const webpack = require('webpack');
 
 module.exports = {
 	context: path.resolve(__dirname, './src'),
-	performance: {
-		hints: false
-	},
 	entry: {
 		app: [
 			'react-hot-loader/patch',
