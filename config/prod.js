@@ -1,10 +1,8 @@
 'use strict';
 
 const webpack = require('webpack');
-const path = require('path');
 const commonConfig = require('./base.js');
 const webpackMerge = require('webpack-merge');
-const publicPath = require('./config').publicPath;
 
 module.exports = function(env) {
 	return webpackMerge(commonConfig(), {
@@ -13,17 +11,13 @@ module.exports = function(env) {
 			vendor: [ 'react', 'react-dom' ]
 		},
 		plugins: [
-			new webpack.LoaderOptionsPlugin({
-				minimize: true,
-				debug: false
-			}),
-			new webpack.optimize.CommonsChunkPlugin({
-				name: 'vendor'
-			}),
 			new webpack.DefinePlugin({
 				'process.env': {
 					'NODE_ENV': JSON.stringify('production')
 				}
+			}),
+			new webpack.optimize.CommonsChunkPlugin({
+				name: 'vendor'
 			}),
 			new webpack.optimize.UglifyJsPlugin({
 				beautify: false,

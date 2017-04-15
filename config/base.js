@@ -1,22 +1,21 @@
 'use strict';
 
 const webpack = require('webpack');
-const path = require('path');
-const publicPath = require('./config').publicPath;
+const config = require('./config');
 
 module.exports = function() {
 	return {
-		context: path.resolve(__dirname, '../src/'),
+		context: config.context,
 		output: {
-			path: path.resolve(__dirname, '../dist'),
+			path: config.contentBase,
 			filename: '[name].bundle.js',
-			publicPath: publicPath,
+			publicPath: config.publicPath,
 			sourceMapFilename: '[name].map'
 		},
 		module: {
 			rules: [
 				{
-					test: /\.js$/,
+					test: /\.jsx?$/,
 					use: [ 'babel-loader' ],
 					exclude: /node_modules/
 				}
@@ -25,9 +24,11 @@ module.exports = function() {
 		resolve: {
 			extensions: ['.jsx', '.js', '.json'],
 			alias: {
-				Lib: path.resolve(__dirname, '../src/lib')
+				Lib: config.libPath
 			},
-			modules: [ 'node_modules' ]
+			modules: [
+				'node_modules'
+			]
 		}
 	};
 };

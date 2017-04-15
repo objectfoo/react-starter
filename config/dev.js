@@ -1,10 +1,9 @@
 'use strict';
 
-const path = require('path');
 const webpack = require('webpack');
 const commonConfig = require('./base.js');
 const webpackMerge = require('webpack-merge');
-const publicPath = require('./config').publicPath;
+const config = require('./config');
 
 module.exports = function (env) {
 	return webpackMerge(commonConfig(), {
@@ -24,8 +23,8 @@ module.exports = function (env) {
 		devServer: {
 			hot: true,
 			compress: false,
-			contentBase: path.resolve(__dirname, '../dist'),
-			publicPath: publicPath
+			contentBase: config.contentBase,
+			publicPath: config.publicPath
 		},
 		plugins: [
 			new webpack.HotModuleReplacementPlugin(),
