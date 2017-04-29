@@ -5,7 +5,10 @@ Now requires Node 6.x.x
 ## scripts
 
 ```js
-// demo server for built app
+// build then run demo server, auto open browser
+"start": "npm run build && npm run demo",
+
+// demo server for built app, auto opens browser
 "demo": "http-server ./dist -o -p 3000 -g true",
 
 // build minified app
