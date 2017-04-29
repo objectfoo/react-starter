@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300);
 
+[data-reactroot] {
+	background: url(../images/test.jpg) no-repeat 0px 0px;
+	background-size: contain;
+}
+
 body, html {
 	font-size: 16px;
 	height: 100%;
@@ -14,7 +19,10 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	
+}
+
+[data-reactroot] h1 {
+	margin-bottom: 60px
 }
 
 #app {
@@ -47,7 +55,6 @@ button:disabled {
 button + button {
 	margin-left: 1rem;
 }
-
 
 .text-center {
 	text-align: center;

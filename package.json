@@ -6,30 +6,23 @@
   "engines": {
     "node": ">=4.7"
   },
-  "main": "index.js",
+  "main": "src/server/index.js",
   "scripts": {
-    "start": "npm run prebuild && concurrently \"npm run watch:css\" \"npm run watch:html\" \"npm run dev-server\"",
-    "dev-server": "webpack-dev-server --env=dev",
-    "clean": "rimraf ./dist && mkdir dist && mkdir dist/css",
-    "watch:css": "npm run copy:css -- --watch --verbose",
-    "copy:css": "cpx ./src/css/* ./dist/css/",
-    "watch:html": "npm run copy:html -- --watch --verbose",
-    "copy:html": "cpx ./src/**/*.html ./dist/",
-    "webpack:build": "cross-env NODE_ENV=production webpack --env=prod --progress --profile --colors",
-    "prebuild": "npm run clean && npm run copy:html && npm run copy:css",
-    "build": "npm run webpack:build"
+    "start": "npm run build && npm run demo",
+    "demo": "http-server ./dist -o -p 3000 -g true",
+    "dev": "webpack-dev-server -d --env=dev --profile --color",
+    "build": "webpack -p --env=prod --progress --profile"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.24.1",
-    "babel-loader": "^6.4.1",
+    "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.4.0",
     "cpx": "~1.5.0",
-    "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^6.10.3",
@@ -40,9 +33,21 @@
     "rimraf": "^2.6.1",
     "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "ejs-loader": "^0.3.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-loader": "^0.4.5",
+    "http-server": "^0.9.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
+    "less-plugin-clean-css": "^1.5.1",
+    "open-cli": "^1.0.5",
+    "webpack-bundle-analyzer": "^2.4.0",
+    "webpack-html-plugin": "^0.1.1",
     "webpack-merge": "^4.1.0"
   }
 }
