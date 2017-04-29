@@ -12,10 +12,10 @@ Now requires Node 6.x.x
 "demo": "http-server ./dist -o -p 3000 -g true",
 
 // build minified app
-"build": "webpack -p --env=prod --progress --profile",
+"build": "webpack -p --env=prod --profile"
 
 // run dev server
-"dev": "webpack-dev-server -d --env=dev --profile --color"
+"dev": "webpack-dev-server -d --env=dev --profile --color --open",
 ```
 
 ## Bundle size report

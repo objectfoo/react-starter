@@ -10,8 +10,8 @@
   "scripts": {
     "start": "npm run build && npm run demo",
     "demo": "http-server ./dist -o -p 3000 -g true",
-    "dev": "webpack-dev-server -d --env=dev --profile --color",
-    "build": "webpack -p --env=prod --progress --profile"
+    "dev": "webpack-dev-server -d --env=dev --profile --color --open",
+    "build": "webpack -p --env=prod --profile"
   },
   "keywords": [],
   "author": "",
