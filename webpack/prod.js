@@ -7,6 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const WebpackHtmlPlugin = require('webpack-html-plugin');
 
+const pkg = require('../package.json');
 const shared = require('./shared');
 const paths = require('./paths');
 const extractCss = new ExtractTextPlugin({
@@ -57,7 +58,7 @@ module.exports = () => {
 		}),
 		extractCss,
 		new WebpackHtmlPlugin({
-			title: 'DEMO: react-starter',
+			title: 'DEMO: ' + pkg.name,
 			template: paths.context + '/index.ejs',
 			filename: 'index.html'
 		}),

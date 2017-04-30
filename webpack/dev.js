@@ -4,6 +4,7 @@ const CleanCSSPlugin = require('less-plugin-clean-css');
 const webpack = require('webpack');
 const WebpackHtmlPlugin = require('webpack-html-plugin');
 
+const pkg = require('../package.json');
 const shared = require('./shared');
 const paths = require('./paths');
 
@@ -57,7 +58,7 @@ module.exports = () => {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NamedModulesPlugin(),
 		new WebpackHtmlPlugin({
-			title: 'DEV: react-starter',
+			title: 'DEV: ' + pkg.name,
 			template: paths.context + '/index.ejs',
 			filename: 'index.html'
 		})
