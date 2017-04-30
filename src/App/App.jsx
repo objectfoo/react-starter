@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter';
 import { libTest } from 'Lib/lib-test';
-import style from '../css/style.less';
+import '../css/style.less';
 
 export default class App extends React.Component {
 	constructor(props) {

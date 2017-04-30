@@ -7,7 +7,7 @@ const WebpackHtmlPlugin = require('webpack-html-plugin');
 const shared = require('./shared');
 const paths = require('./paths');
 
-module.exports = env => {
+module.exports = () => {
 	const build = shared();
 
 	build.devtool = 'cheap-module-eval-source-map';

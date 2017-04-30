@@ -14,7 +14,7 @@ const extractCss = new ExtractTextPlugin({
 	filename: 'style.[contenthash].css'
 });
 
-module.exports = env => {
+module.exports = () => {
 	var build = shared();
 
 	build.devtool = 'source-map';
