@@ -1,6 +1,6 @@
 # React starter
 
-Now requires Node 6.x.x
+Works with Node 4.7.0+
 
 ## scripts
 
