@@ -54,13 +54,13 @@ module.exports = () => {
 		new CleanWebpackPlugin(paths.cleanPaths, { root: paths.root }),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',
-			minChunks: ({ resource }) => /node_modules/.test(resource)
+			minChunks: (ctx) => /node_modules/.test(ctx.resource)
 		}),
 		extractCss,
 		new WebpackHtmlPlugin({
-			title: 'DEMO: ' + pkg.name,
-			template: paths.context + '/index.ejs',
-			filename: 'index.html'
+			title: 'Demo: ' + pkg.name,
+			inject: true,
+			template: paths.context + '/index.html',
 		}),
 		new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false })
 	];

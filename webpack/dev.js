@@ -58,8 +58,9 @@ module.exports = () => {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NamedModulesPlugin(),
 		new WebpackHtmlPlugin({
+			inject: true,
 			title: 'DEV: ' + pkg.name,
-			template: paths.context + '/index.ejs',
+			template: paths.context + '/index.html',
 			filename: 'index.html'
 		})
 	];
